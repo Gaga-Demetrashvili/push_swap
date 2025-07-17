@@ -51,7 +51,10 @@ static void	validate_and_init_arr(int **arr, char **args, int size)
 	long	num;
 
 	if (!args || size == 0)
+	{
 		*arr = NULL;
+		return;
+	}
 	// malloc will return null so *arr will become null as it is intended
 	*arr = (int *)malloc(sizeof(int) * size);
 	i = 0;
@@ -63,6 +66,7 @@ static void	validate_and_init_arr(int **arr, char **args, int size)
 		{
 			free(*arr);
 			*arr = NULL;
+			return;
 		}
 		i++;
 	}
