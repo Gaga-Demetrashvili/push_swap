@@ -18,7 +18,9 @@ typedef struct s_stack
 // validation part
 long		ft_atoi(char *num);
 void		print_int_arr(int *arr, int size);
+void		print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 int			*validate_input(char **args, int size);
+int			*sort_int_tab(int *arr, int size);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity);
