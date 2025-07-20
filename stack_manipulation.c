@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	stack_controller(int *arr_a, int *arr_b, size_t size)
+void	stack_controller(int *arr_a, int *arr_b, int size)
 {
 	t_stack *stack_a = create_stack(arr_a, size, size);
 	// At the begining stack_a is full that's why size and capacity are same

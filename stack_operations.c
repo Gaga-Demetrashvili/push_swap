@@ -75,7 +75,7 @@ void	swap(t_stack *stack)
 	(stack->arr)[1] = tmp;
 }
 
-t_stack	*create_stack(int *arr, size_t size, size_t capacity)
+t_stack	*create_stack(int *arr, int size, int capacity)
 {
 	t_stack	*stack;
 
