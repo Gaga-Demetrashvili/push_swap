@@ -1,0 +1,65 @@
+#include "push_swap.h"
+
+void	stack_operations_tests(t_stack *stack_a, t_stack *stack_b)
+{
+	// swap a
+	stack_a->swap(stack_a);
+	print_int_arr(stack_a->arr, stack_a->size);
+
+	// push b
+	push(stack_a, stack_b);
+	push(stack_a, stack_b);
+	push(stack_a, stack_b);
+	// push(stack_a, stack_b);
+	// push(stack_a, stack_b);
+	// push(stack_a, stack_b);
+
+	printf("%s", "stack_a - ");
+	print_int_arr(stack_a->arr, stack_a->size);
+	printf("%s", "stack_b - ");
+	print_int_arr(stack_b->arr, stack_b->size);
+	// ---------------- //
+	// push(stack_b, stack_a);
+	// push(stack_b, stack_a);
+	// push(stack_b, stack_a);
+	// push(stack_b, stack_a);
+	// push(stack_b, stack_a);
+	// push(stack_b, stack_a);
+
+	// printf("%s", "stack_a - ");
+	// print_int_arr(stack_a->arr, stack_a->size);
+	// printf("%s", "stack_b - ");
+	// print_int_arr(stack_b->arr, stack_b->size);
+
+	// rotate rr
+	stack_a->rotate(stack_a);
+	stack_b->rotate(stack_b);
+
+	printf("%s", "stack_a - ");
+	print_int_arr(stack_a->arr, stack_a->size);
+	printf("%s", "stack_b - ");
+	print_int_arr(stack_b->arr, stack_b->size);
+
+	// rrotate rrr
+	stack_a->rrotate(stack_a);
+	stack_b->rrotate(stack_b);
+
+	printf("%s", "stack_a - ");
+	print_int_arr(stack_a->arr, stack_a->size);
+	printf("%s", "stack_b - ");
+	print_int_arr(stack_b->arr, stack_b->size);
+
+	// swap a
+	stack_a->swap(stack_a);
+	print_int_arr(stack_a->arr, stack_a->size);
+
+	// push a
+	push(stack_b, stack_a);
+	push(stack_b, stack_a);
+	push(stack_b, stack_a);
+
+	printf("%s", "stack_a - ");
+	print_int_arr(stack_a->arr, stack_a->size);
+	printf("%s", "stack_b - ");
+	print_int_arr(stack_b->arr, stack_b->size);
+}
