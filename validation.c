@@ -47,16 +47,17 @@ static int	is_distinct(int *arr, int size)
 
 static void	validate_and_init_arr(int **arr, char **args, int size)
 {
-	size_t	i;
-	long	num;
+	int	i;
 
 	if (!args || size == 0)
 	{
 		*arr = NULL;
-		return;
+		return ;
 	}
 	// malloc will return null so *arr will become null as it is intended
 	*arr = (int *)malloc(sizeof(int) * size);
+	if (!arr)
+		return ;
 	i = 0;
 	while (i < size)
 	{
@@ -66,7 +67,7 @@ static void	validate_and_init_arr(int **arr, char **args, int size)
 		{
 			free(*arr);
 			*arr = NULL;
-			return;
+			return ;
 		}
 		i++;
 	}

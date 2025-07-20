@@ -3,7 +3,7 @@
 int	main(int argc, char **argv)
 {
 	int size;
-	if(argc == 1) // If no args are specified return to prompt
+	if (argc == 1) // If no args are specified return to prompt
 		return (0);
 	size = argc - 1;
 	int *arr_a = validate_input(argv + 1, size);

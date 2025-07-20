@@ -24,7 +24,7 @@ long	ft_atoi(char *num)
 
 void	print_int_arr(int *arr, int size)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < size)

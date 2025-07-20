@@ -9,8 +9,8 @@
 typedef struct s_stack
 {
 	int		*arr;
-	size_t	size;
-	size_t	capacity;
+	int		size;
+	int		capacity;
 	void	(*swap)(struct s_stack *self);
 	void	(*rotate)(struct s_stack *self);
 	void	(*rrotate)(struct s_stack *self);
