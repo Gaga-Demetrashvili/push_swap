@@ -50,13 +50,13 @@ static size_t	ascending(int a, int b)
 	return (a <= b);
 }
 
-static int	*arrdup(int *arr, int size)
+int	*arrdup(int *arr, int size)
 {
 	int	*new_arr;
 	int	i;
 
 	new_arr = malloc(sizeof(int) * size);
-	if (!new_arr)
+	if (!new_arr || !arr)
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -67,28 +67,55 @@ static int	*arrdup(int *arr, int size)
 	return (new_arr);
 }
 
-int	*sort_int_tab(int *arr, int size)
+static int	get_index(int *sorted_arr, int val, int size)
 {
-	int *sorted_arr;
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (sorted_arr[i] == val)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+static int	indexsize_arr(int *og_arr, int *working_arr, int size)
+{
+	int	i;
+	int	index;
+
+	i = 0;
+	while (i < size)
+	{
+		index = get_index(working_arr, og_arr[i], size);
+		if (index == -1)
+			return (0);
+		og_arr[i] = index;
+		i++;
+	}
+	return (1);
+}
+
+int	sort_and_indexsize_int_tab(int *og_arr, int *working_arr, int size)
+{
 	int i;
 	int tmp;
 
 	i = 1;
-	sorted_arr = arrdup(arr, size);
-	if (!sorted_arr)
-		return (NULL);
 	while (i < size)
 	{
-		if (!ascending(arr[i - 1], arr[i]))
+		if (!ascending(working_arr[i - 1], working_arr[i]))
 		{
-			tmp = arr[i - 1];
-			arr[i - 1] = arr[i];
-			arr[i] = tmp;
+			tmp = working_arr[i - 1];
+			working_arr[i - 1] = working_arr[i];
+			working_arr[i] = tmp;
 			if (i > 1)
 				i--;
 		}
 		else
 			i++;
 	}
-	return (sorted_arr);
+	return (indexsize_arr(og_arr, working_arr, size));
 }

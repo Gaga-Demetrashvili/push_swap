@@ -20,7 +20,8 @@ long		ft_atoi(char *num);
 void		print_int_arr(int *arr, int size);
 void		print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 int			*validate_input(char **args, int size);
-int			*sort_int_tab(int *arr, int size);
+int			sort_and_indexsize_int_tab(int *og_arr, int *working_arr, int size);
+int			*arrdup(int *arr, int size);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity);
@@ -30,7 +31,7 @@ void		rrotate(t_stack *stack);
 void		push(t_stack *a, t_stack *b);
 
 // I think main sorting logic will go here (might rename file and method later)
-void		stack_controller(int *arr_a, int *arr_b, int size);
+void		stack_controller(int size, char **argv);
 
 // method for testing if operations work properly
 void		stack_operations_tests(t_stack *stack_a, t_stack *stack_b);

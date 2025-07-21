@@ -1,45 +1,72 @@
 #include "push_swap.h"
 
-int	ascending(int a, int b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
-	return (a <= b);
-}
+	int i;
+	int j;
+	int mux_num = a->size;
+	int max_bits = 0;
 
-int	is_arr_sorted(int *arr, int size)
-{
-	int	i;
-
-	i = 1;
-	while (i < size)
+	while ((mux_num >> max_bits) != 0)
+		max_bits++;
+	
+	i = 0;
+	while (i < max_bits)
 	{
-		if (!ascending(arr[i - 1], arr[i]))
-			return (0);
+		j = 0;
+		while (j < a->size)
+		{
+			int num = a->arr[0];
+			if (((num >> i) & 1) == 1)
+				a->rotate(a);
+			else
+				push(a, b);
+			j++;
+		}
+		while (b->size > 0)
+			push(b, a);
 		i++;
 	}
-	return (1);
 }
 
-void	stack_controller(int *arr_a, int *arr_b, int size)
+void	stack_controller(int size, char **argv)
 {
+	int *og_arr;
+	int *working_arr;
+
+	og_arr = validate_input(argv + 1, size);
+	print_int_arr(og_arr, size);
+	working_arr = arrdup(og_arr, size);
+	if (!og_arr || !working_arr)
+	{
+		printf("%s\n", "Error");
+		// return (0);
+	}
+	int res = sort_and_indexsize_int_tab(og_arr, working_arr, size);
+	printf("%s", "og arr - ");
+	print_int_arr(og_arr, size); // 1 0 2 4 3 5
+	printf("%s", "working arr - ");
+	print_int_arr(working_arr, size); // 1 0 2 4 3 5
+
+	if (!res)
+	{
+		printf("%s\n", "Error");
+		// return (0);
+	}
+	// printf("%s", "initial stack - ");
+	// print_int_arr(working_arr, size); // 1 0 2 4 3 5
+	int *arr_b = (int *)malloc(sizeof(int) * size);
+
+
 	// At the begining stack_a is full that's why size and capacity are same
-	t_stack *stack_a = create_stack(arr_a, size, size);
+	t_stack *stack_a = create_stack(working_arr, size, size);
 	// At the begining stack_b should be empty,
 	// capacity will be same as stack_a's
 	t_stack *stack_b = create_stack(arr_b, 0, size);
 
-	// printf("%s\n", is_arr_sorted(stack_a->arr,
-	// 		size) ? "is sorted" : "is not sorted");
-
-	// case 1 7 5 3 9 8
-	// we should prob check: if arr is already sorted, we can terminate process,
-	// but for now I am focused on sort logic and I skip this step
-	int half_of_stack = size / 2;
-	while (half_of_stack--)
-	{
-		push(stack_a, stack_b);
-		print_both_stacks(stack_a, stack_b);
-	}
+	radix_sort(stack_a, stack_b);
+	// print_int_arr(stack_a->arr, size);
 
 	// tests
-	stack_operations_tests(stack_a, stack_b);
+	// stack_operations_tests(stack_a, stack_b);
 }
