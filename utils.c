@@ -50,7 +50,7 @@ static size_t	ascending(int a, int b)
 	return (a <= b);
 }
 
-int	*arrdup(int *arr, int size)
+static int	*arrdup(int *arr, int size)
 {
 	int	*new_arr;
 	int	i;
@@ -81,7 +81,7 @@ static int	get_index(int *sorted_arr, int val, int size)
 	return (-1);
 }
 
-static int	indexsize_arr(int *og_arr, int *working_arr, int size)
+static int	indexsize_arr(int *indexed_arr, int *arr, int size)
 {
 	int	i;
 	int	index;
@@ -89,33 +89,41 @@ static int	indexsize_arr(int *og_arr, int *working_arr, int size)
 	i = 0;
 	while (i < size)
 	{
-		index = get_index(working_arr, og_arr[i], size);
+		index = get_index(arr, indexed_arr[i], size);
 		if (index == -1)
 			return (0);
-		og_arr[i] = index;
+		indexed_arr[i] = index;
 		i++;
 	}
 	return (1);
 }
 
-int	sort_and_indexsize_int_tab(int *og_arr, int *working_arr, int size)
+int	*sort_and_indexsize_int_tab(int *arr, int size)
 {
 	int i;
 	int tmp;
+	int *indexed_arr;
+	int indexsisation_res;
 
+	indexed_arr = arrdup(arr, size);
+	if (!indexed_arr)
+		return (NULL);
 	i = 1;
 	while (i < size)
 	{
-		if (!ascending(working_arr[i - 1], working_arr[i]))
+		if (!ascending(arr[i - 1], arr[i]))
 		{
-			tmp = working_arr[i - 1];
-			working_arr[i - 1] = working_arr[i];
-			working_arr[i] = tmp;
+			tmp = arr[i - 1];
+			arr[i - 1] = arr[i];
+			arr[i] = tmp;
 			if (i > 1)
 				i--;
 		}
 		else
 			i++;
 	}
-	return (indexsize_arr(og_arr, working_arr, size));
+	indexsisation_res = indexsize_arr(indexed_arr, arr, size);
+	if (!indexsisation_res)
+		return (NULL);
+	return (indexed_arr);
 }

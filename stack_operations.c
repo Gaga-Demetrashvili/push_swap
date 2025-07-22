@@ -42,7 +42,7 @@ void	push(t_stack *a, t_stack *b)
 	shift_elements(b, 0);
 	b->size++;
 	b->arr[0] = tmp;
-	printf("%s\n", "push");
+	printf("p%c\n", b->name);
 }
 
 void	rotate(t_stack *stack)
@@ -52,7 +52,7 @@ void	rotate(t_stack *stack)
 	tmp = stack->arr[0];
 	shift_elements(stack, 1);
 	stack->arr[stack->size - 1] = tmp;
-	printf("%s\n", "rotate");
+	printf("r%c\n", stack->name);
 }
 
 void	rrotate(t_stack *stack)
@@ -79,7 +79,7 @@ void	swap(t_stack *stack)
 	printf("%s\n", "swap");
 }
 
-t_stack	*create_stack(int *arr, int size, int capacity)
+t_stack	*create_stack(int *arr, int size, int capacity, char name)
 {
 	t_stack	*stack;
 
@@ -87,6 +87,7 @@ t_stack	*create_stack(int *arr, int size, int capacity)
 	stack->arr = arr;
 	stack->size = size;
 	stack->capacity = capacity;
+	stack->name = name;
 	stack->swap = swap;
 	stack->rotate = rotate;
 	stack->rrotate = rrotate;

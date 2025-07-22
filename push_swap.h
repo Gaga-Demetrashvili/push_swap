@@ -10,6 +10,7 @@ typedef struct s_stack
 	int		*arr;
 	int		size;
 	int		capacity;
+	char	name;
 	void	(*swap)(struct s_stack *self);
 	void	(*rotate)(struct s_stack *self);
 	void	(*rrotate)(struct s_stack *self);
@@ -20,11 +21,10 @@ long		ft_atoi(char *num);
 void		print_int_arr(int *arr, int size);
 void		print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 int			*validate_input(char **args, int size);
-int			sort_and_indexsize_int_tab(int *og_arr, int *working_arr, int size);
-int			*arrdup(int *arr, int size);
+int			*sort_and_indexsize_int_tab(int *arr, int size);
 
 // stack operations part
-t_stack		*create_stack(int *arr, int size, int capacity);
+t_stack		*create_stack(int *arr, int size, int capacity, char name);
 void		swap(t_stack *stack);
 void		rotate(t_stack *stack);
 void		rrotate(t_stack *stack);
