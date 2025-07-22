@@ -1,6 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "Libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -17,11 +18,12 @@ typedef struct s_stack
 }			t_stack;
 
 // validation part
-long		ft_atoi(char *num);
+long		ft_atoi_ps(char *num);
 void		print_int_arr(int *arr, int size);
 void		print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 int			*validate_input(char **args, int size);
 int			*sort_and_indexsize_int_tab(int *arr, int size);
+int			splitted_args_size(char **args);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity, char name);

@@ -1,27 +1,5 @@
 #include "push_swap.h"
 
-long	ft_atoi(char *num)
-{
-	long	res;
-	int		sign;
-	size_t	i;
-
-	res = 0;
-	sign = 1;
-	i = 0;
-	if (num[0] == '-')
-	{
-		sign *= -1;
-		i++;
-	}
-	while (num[i])
-	{
-		res = res * 10 + (num[i] - '0');
-		i++;
-	}
-	return (res * sign);
-}
-
 void	print_int_arr(int *arr, int size)
 {
 	int	i;
@@ -96,6 +74,16 @@ static int	indexsize_arr(int *indexed_arr, int *arr, int size)
 		i++;
 	}
 	return (1);
+}
+
+int	splitted_args_size(char **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+		i++;
+	return (i);
 }
 
 int	*sort_and_indexsize_int_tab(int *arr, int size)
