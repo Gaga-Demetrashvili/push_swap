@@ -19,7 +19,7 @@
 // 	curr_node = node;
 // 	while (curr_node)
 // 	{
-// 		printf("%s", (char *)curr_node->content);
+// 		ft_printf("%s", (char *)curr_node->content);
 // 		curr_node = curr_node->next;
 // 	}
 // }
@@ -60,7 +60,7 @@ size_t	ft_lstsize(t_list *lst)
 // 	ft_lstadd_front(&head, node2);
 // 	ft_lstadd_front(&head, node3);
 // 	// ft_print_list_t(head);
-// 	printf("%zu", ft_lstsize(head));
+// 	ft_printf("%zu", ft_lstsize(head));
 // 	free(node1);
 // 	free(node2);
 // 	free(node3);

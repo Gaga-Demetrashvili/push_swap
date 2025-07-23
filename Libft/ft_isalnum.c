@@ -22,8 +22,8 @@ int	ft_isalnum(char c)
 
 // int	main(void)
 // {
-// 	printf("Result of isalnum original - %d\n", isalnum('$'));
-// 	printf("Result of isalnum mine - %d\n", ft_isalnum('%'));
+// 	ft_printf("Result of isalnum original - %d\n", isalnum('$'));
+// 	ft_printf("Result of isalnum mine - %d\n", ft_isalnum('%'));
 
 // 	return (0);
 // }

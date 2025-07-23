@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 16:27:19 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/06/08 16:33:49 by gdemetra         ###   ########.fr       */
+/*   Created: 2025/06/21 16:42:50 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/06/21 16:42:50 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "ft_printf.h"
 
-int	ft_tolower(int c)
+static size_t	ft_strlen(char *str)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	size_t	i;
+
+	i = 0;
+	while (*(str + i))
+		i++;
+	return (i);
 }
 
-// int	main(void)
-// {
-// 	ft_printf("%c", ft_tolower('A'));
-// }
+size_t	ft_putstr(char *str)
+{
+	char	*null_case;
+	size_t	char_c;
+
+	if (!str)
+	{
+		null_case = "(null)";
+		char_c = ft_strlen(null_case);
+		write(1, null_case, char_c);
+		return (char_c);
+	}
+	char_c = ft_strlen(str);
+	write(1, str, char_c);
+	return (char_c);
+}

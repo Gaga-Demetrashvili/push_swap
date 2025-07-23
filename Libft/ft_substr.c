@@ -41,6 +41,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // int	main(void)
 // {
 // 	char *og_str = "Gaga Demetrashvili";
-// 	printf("%s", ft_substr(og_str, 0, 4));
+// 	ft_printf("%s", ft_substr(og_str, 0, 4));
 // 	return (0);
 // }

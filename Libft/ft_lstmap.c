@@ -19,7 +19,7 @@
 // 	curr_node = node;
 // 	while (curr_node)
 // 	{
-// 		printf("%s", (char *)curr_node->content);
+// 		ft_printf("%s", (char *)curr_node->content);
 // 		curr_node = curr_node->next;
 // 	}
 // }
@@ -80,7 +80,7 @@ void	ft_del_content(void *content)
 // 	ft_lstadd_back(&begin, node3);
 // 	ft_print_list_t(begin);
 // 	res = ft_lstmap(begin, ft_delegate, ft_del_content);
-// 	printf("\n");
+// 	ft_printf("\n");
 // 	ft_print_list_t(res);
 // 	return (0);
 // }

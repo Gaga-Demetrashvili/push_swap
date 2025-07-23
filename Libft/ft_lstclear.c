@@ -46,12 +46,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 // 	ft_lstadd_back(&begin, node1);
 // 	ft_lstadd_back(&begin, node2);
 // 	ft_lstadd_back(&begin, node3);
-//     printf("%s\n", (char *)node1->content);
-//     printf("%s\n", (char *)node2->content);
-//     printf("%s\n", (char *)node3->content);
-//     printf("begin content: %s\n", (char *)begin->content);
+//     ft_printf("%s\n", (char *)node1->content);
+//     ft_printf("%s\n", (char *)node2->content);
+//     ft_printf("%s\n", (char *)node3->content);
+//     ft_printf("begin content: %s\n", (char *)begin->content);
 // 	ft_lstclear(&begin, ft_del_content);
 //     if (!begin)
-//         printf("Begin became null");
+//         ft_printf("Begin became null");
 // 	return (0);
 // }

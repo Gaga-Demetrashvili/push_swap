@@ -7,20 +7,20 @@ void	print_int_arr(int *arr, int size)
 	i = 0;
 	while (i < size)
 	{
-		printf("%d ", arr[i]);
+		ft_printf("%d ", arr[i]);
 		i++;
 	}
-	printf("%c", '\n');
+	ft_printf("%c", '\n');
 }
 
 void	print_both_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	printf("%c", '\n');
-	printf("%s", "stack_a - ");
+	ft_printf("%c", '\n');
+	ft_printf("%s", "stack_a - ");
 	print_int_arr(stack_a->arr, stack_a->size);
-	printf("%s", "stack_b - ");
+	ft_printf("%s", "stack_b - ");
 	print_int_arr(stack_b->arr, stack_b->size);
-	printf("%c", '\n');
+	ft_printf("%c", '\n');
 }
 
 static size_t	ascending(int a, int b)
@@ -114,4 +114,35 @@ int	*sort_and_indexsize_int_tab(int *arr, int size)
 	if (!indexsisation_res)
 		return (NULL);
 	return (indexed_arr);
+}
+
+void	radix_sort(t_stack *a, t_stack *b)
+{
+	int	i;
+	int	j;
+	int	mux_num;
+	int	max_bits;
+	int	num;
+
+	mux_num = a->capacity;
+	max_bits = 0;
+	while ((mux_num >> max_bits) != 0)
+		max_bits++;
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < a->capacity)
+		{
+			num = a->arr[0];
+			if (((num >> i) & 1) == 1)
+				a->rotate(a);
+			else
+				push(a, b);
+			j++;
+		}
+		while (b->size > 0)
+			push(b, a);
+		i++;
+	}
 }

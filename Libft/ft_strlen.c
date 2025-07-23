@@ -31,8 +31,8 @@ size_t	ft_strlen(const char *str)
 
 // int	main(void)
 // {
-// 	printf("Result of isprint original - %zu\n", strlen("GagaDeme"));
-// 	printf("Result of isprint mine - %zu\n", ft_strlen("GagaDeme"));
+// 	ft_printf("Result of isprint original - %zu\n", strlen("GagaDeme"));
+// 	ft_printf("Result of isprint mine - %zu\n", ft_strlen("GagaDeme"));
 
 // 	return (0);
 // }
@@ -40,7 +40,7 @@ size_t	ft_strlen(const char *str)
 // void	ft_string_manipulation(char *str)
 // {
 // 	str[1] = 'D';
-// 	printf("Result of ft_string_manipulation - %s\n", str);
+// 	ft_printf("Result of ft_string_manipulation - %s\n", str);
 // }
 
 // int	main(void)

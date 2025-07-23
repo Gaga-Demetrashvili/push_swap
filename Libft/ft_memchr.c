@@ -35,7 +35,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // int main()
 // {
 //     const char *string = "1234A";
-//     printf("%d\n", ft_memchr(string, 'A', -1));
-//     printf("%d", memchr(string, 'A', -1));
+//     ft_printf("%d\n", ft_memchr(string, 'A', -1));
+//     ft_printf("%d", memchr(string, 'A', -1));
 //     return (0);
 // }

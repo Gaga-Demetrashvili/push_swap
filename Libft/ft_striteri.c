@@ -33,6 +33,6 @@ void	ft_delegate_iteri(unsigned int i, char *p)
 // {
 // 	char src[] = "012345678";
 // 	ft_striteri(src, ft_delegate_iteri);
-// 	printf("%s", src);
+// 	ft_printf("%s", src);
 // 	return (0);
 // }

@@ -43,7 +43,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // {
 // 	const char *str1 = "1434";
 // 	const char *str2 = "1434";
-// 	printf("%d\n", ft_memcmp(str1, str1 + 1, 3));
-// 	printf("%d", memcmp(str2, str2 + 1, 3));
+// 	ft_printf("%d\n", ft_memcmp(str1, str1 + 1, 3));
+// 	ft_printf("%d", memcmp(str2, str2 + 1, 3));
 // 	return (0);
 // }

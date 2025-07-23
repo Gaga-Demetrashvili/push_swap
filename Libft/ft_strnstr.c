@@ -43,7 +43,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // 	ptr1 = ft_strnstr(largestring, smallstring, -1);
 // 	// ptr2 = strnstr(largestring, smallstring);
-// 	printf("%s\n", ptr1); // lorem ipsum dolor sit amet
-// 	// printf("%s", strnstr(largestring, smallstring, 3));
+// 	ft_printf("%s\n", ptr1); // lorem ipsum dolor sit amet
+// 	// ft_printf("%s", strnstr(largestring, smallstring, 3));
 // 	return (0);
 // }

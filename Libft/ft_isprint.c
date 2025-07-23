@@ -22,8 +22,8 @@ int	ft_isprint(int c)
 
 // int	main(void)
 // {
-// 	printf("Result of isprint original - %d\n", isprint(128));
-// 	printf("Result of isprint mine - %d\n", ft_isprint(31));
+// 	ft_printf("Result of isprint original - %d\n", isprint(128));
+// 	ft_printf("Result of isprint mine - %d\n", ft_isprint(31));
 
 // 	return (0);
 // }

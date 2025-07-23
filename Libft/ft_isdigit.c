@@ -22,8 +22,8 @@ int	ft_isdigit(int c)
 
 // int	main(void)
 // {
-// 	printf("Result of isdigit original - %d\n", isdigit('1'));
-// 	printf("Result of isdigit mine - %d\n", ft_isdigit('5'));
+// 	ft_printf("Result of isdigit original - %d\n", isdigit('1'));
+// 	ft_printf("Result of isdigit mine - %d\n", ft_isdigit('5'));
 
 // 	return (0);
 // }

@@ -42,7 +42,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_strncmp("12345", "12343", -1));
-// 	printf("%d", strncmp("12345", "12343", -1));
+// 	ft_printf("%d\n", ft_strncmp("12345", "12343", -1));
+// 	ft_printf("%d", strncmp("12345", "12343", -1));
 // 	return (0);
 // }

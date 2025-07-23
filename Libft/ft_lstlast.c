@@ -43,7 +43,7 @@ t_list	*ft_lstlast(t_list *lst)
 // 	ft_lstadd_front(&head, node1);
 // 	ft_lstadd_front(&head, node2);
 // 	last_node = ft_lstlast(head);
-// 	printf("%s", (char *)last_node->content);
+// 	ft_printf("%s", (char *)last_node->content);
 // 	free(node1);
 // 	free(node2);
 // 	return (0);

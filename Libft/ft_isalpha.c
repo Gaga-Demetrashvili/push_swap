@@ -21,8 +21,8 @@ int	ft_isalpha(int c)
 }
 
 // int main(void){
-//     printf("Result of isalpha original - %d\n", isalpha('A'));
-//     printf("Result of isalpha mine - %d\n", ft_isalpha('B'));
+//     ft_printf("Result of isalpha original - %d\n", isalpha('A'));
+//     ft_printf("Result of isalpha mine - %d\n", ft_isalpha('B'));
 
 //     return (0);
 // }

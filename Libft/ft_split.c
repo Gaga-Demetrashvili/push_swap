@@ -32,27 +32,27 @@
 // 	test = "Test";
 // 	if (test_num == 1)
 // 	{
-// 		printf("%s %ss\n", funcname, test);
+// 		ft_printf("%s %ss\n", funcname, test);
 // 		fflush(stdout);
 // 		ft_writecharn('-', 15);
 // 	}
-// 	printf("%s %zu\t", test, test_num++);
-// 	// printf("Gaga Demetrashvili\n");
+// 	ft_printf("%s %zu\t", test, test_num++);
+// 	// ft_printf("Gaga Demetrashvili\n");
 // 	// I use fflush(stdout) (stdout refers to terminal),
-// 	// because printf saves text to print in buffer,
+// 	// because ft_printf saves text to print in buffer,
 // 	// then before program ends C runtime flushes,
 // 	// which means shows output to terminal. That's why without
 // 	// using fflush, first write method's output will be shown,
 // 	//	because it writes directly to the file descriptor
 // 	// (stdout for example - which stands for terminal) via the kernel,
 // 	// immediately.It is said that if you put
-// 	// "\n" (new line) in the end of the string of printf,
+// 	// "\n" (new line) in the end of the string of ft_printf,
 // 	// it should automatically flush output like fflush(stdout),
 // 	// but probably it doesn't always work like that so fflush(stdout)
 //  // is go to method for that problem.
-// 	printf("ft_%s: %p | %s: %p\t", funcname, ft_res, funcname, res);
+// 	ft_printf("ft_%s: %p | %s: %p\t", funcname, ft_res, funcname, res);
 // 	emoji = (ft_res == res) ? "✅" : "❌";
-// 	printf("%s\n", emoji);
+// 	ft_printf("%s\n", emoji);
 // }
 
 // size_t	ft_strlen(const char *str)
@@ -98,7 +98,7 @@
 // 	i = 0;
 // 	while (arr[i])
 // 	{
-// 		printf("%s\n", arr[i]);
+// 		ft_printf("%s\n", arr[i]);
 // 		i++;
 // 	}
 // }
@@ -323,12 +323,12 @@ char	**ft_split(const char *s, char c)
 
 // Test for ft_countwords
 // char *str_to_test_for_count = "  a   a  a ";
-// printf("%zu\n", ft_countwords(str_to_test_for_count, ' '));
+// ft_printf("%zu\n", ft_countwords(str_to_test_for_count, ' '));
 
 // Test for ft_substr
 // const char *str_to_substr = "Gaga Temo leqso beqa";
 
-// printf("%s", ft_substr_res = ft_substr(str_to_split, 18, 4));
+// ft_printf("%s", ft_substr_res = ft_substr(str_to_split, 18, 4));
 // free(ft_substr_res);
 
 // Testing utility methods for ft_split

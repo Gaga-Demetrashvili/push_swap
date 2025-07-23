@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	char *name = "Gaga ";
 // 	char *surname = "Demetrashvili";
 // 	char *fullName = ft_strjoin(name, surname);
-// 	printf("%s", fullName);
+// 	ft_printf("%s", fullName);
 // 	free(fullName);
 // 	return (0);
 // }

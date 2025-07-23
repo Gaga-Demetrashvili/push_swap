@@ -72,7 +72,7 @@ char	*ft_itoa(int n)
 
 // 	num = 12;
 // 	res = ft_itoa(num);
-// 	printf("%s", res);
+// 	ft_printf("%s", res);
 // 	free(res);
 // 	return (0);
 // }

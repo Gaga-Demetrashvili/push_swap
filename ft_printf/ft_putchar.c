@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 16:27:19 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/06/08 16:33:49 by gdemetra         ###   ########.fr       */
+/*   Created: 2025/06/21 16:41:38 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/06/21 16:41:38 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "ft_printf.h"
 
-int	ft_tolower(int c)
+size_t	ft_putchar(char c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	write(1, &c, 1);
+	return (1);
 }
-
-// int	main(void)
-// {
-// 	ft_printf("%c", ft_tolower('A'));
-// }

@@ -41,7 +41,7 @@ char	ft_delegate_mapi(unsigned int i, char c)
 // int	main(void)
 // {
 // 	char *str_to_modify = "012345678";
-// 	printf("%s", ft_strmapi(str_to_modify, &ft_delegate_mapi));
+// 	ft_printf("%s", ft_strmapi(str_to_modify, &ft_delegate_mapi));
 
 // 	return (0);
 // }

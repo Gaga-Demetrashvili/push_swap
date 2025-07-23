@@ -17,6 +17,6 @@ int	main(int argc, char **argv)
 		argv = argv + 1;
 		size = argc - 1;
 	}
-	stack_controller(size, argv);
+	push_swap(size, argv);
 	return (0);
 }

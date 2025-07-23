@@ -25,9 +25,9 @@ void	stack_operations_tests(t_stack *stack_a, t_stack *stack_b)
 	// push(stack_b, stack_a);
 	// push(stack_b, stack_a);
 
-	// printf("%s", "stack_a - ");
+	// ft_printf("%s", "stack_a - ");
 	// print_int_arr(stack_a->arr, stack_a->size);
-	// printf("%s", "stack_b - ");
+	// ft_printf("%s", "stack_b - ");
 	// print_int_arr(stack_b->arr, stack_b->size);
 
 	// rotate rr

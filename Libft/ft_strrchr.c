@@ -35,6 +35,6 @@ char	*ft_strrchr(const char *s, int c)
 // 	char	*str;
 
 // 	str = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-// 	printf("%s\n", ft_strrchr(str, '\0'));
-// 	printf("%s\n", strrchr(str, '\0'));
+// 	ft_printf("%s\n", ft_strrchr(str, '\0'));
+// 	ft_printf("%s\n", strrchr(str, '\0'));
 // }

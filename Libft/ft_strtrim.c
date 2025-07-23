@@ -39,10 +39,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char *strtrim;
 // 	char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
 // 	if (!(strtrim = ft_strtrim(s1, " ")))
-// 		printf("%s", "NULL");
+// 		ft_printf("%s", "NULL");
 // 	else
-// 		printf("%s", strtrim);
+// 		ft_printf("%s", strtrim);
 // 	if (strtrim == s1)
-// 		printf("\nA new string was not returned");
+// 		ft_printf("\nA new string was not returned");
 // 	return (0);
 // }

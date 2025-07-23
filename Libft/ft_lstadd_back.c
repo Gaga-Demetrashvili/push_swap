@@ -19,7 +19,7 @@
 // 	curr_node = node;
 // 	while (curr_node)
 // 	{
-// 		printf("%s", (char *)curr_node->content);
+// 		ft_printf("%s", (char *)curr_node->content);
 // 		curr_node = curr_node->next;
 // 	}
 // }

@@ -40,6 +40,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	dst = (char *)malloc(sizeof(dst) * 15);
 // 	memset(dst, 'r', 6);
 
-// 	printf("Concatination intended len - %zu, Concatinated string - %s\n",
+// 	ft_printf("Concatination intended len - %zu, Concatinated string - %s\n",
 // 		ft_strlcat(dst, "", 10), dst);
 // }

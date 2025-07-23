@@ -22,8 +22,8 @@ int	ft_isascii(int c)
 
 // int	main(void)
 // {
-// 	printf("Result of isalpha original - %d\n", isascii(200));
-// 	printf("Result of isalpha mine - %d\n", ft_isascii(128));
+// 	ft_printf("Result of isalpha original - %d\n", isascii(200));
+// 	ft_printf("Result of isalpha mine - %d\n", ft_isascii(128));
 
 // 	return (0);
 // }

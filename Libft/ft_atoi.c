@@ -44,7 +44,7 @@ int	ft_atoi(const char *nptr)
 // int	main(void)
 // {
 // 	const char *num = "    -01203a45";
-// 	printf("%d\n", ft_atoi(num));
-// 	printf("%d", atoi(num));
+// 	ft_printf("%d\n", ft_atoi(num));
+// 	ft_printf("%d", atoi(num));
 // 	return (0);
 // }

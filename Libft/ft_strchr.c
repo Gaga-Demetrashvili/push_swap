@@ -33,5 +33,5 @@ char	*ft_strchr(const char *s, int c)
 // {
 // 	char s = 'a' + 257;
 
-// 	printf("%c\n", s);
+// 	ft_printf("%c\n", s);
 // }

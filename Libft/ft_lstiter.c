@@ -19,7 +19,7 @@
 // 	curr_node = node;
 // 	while (curr_node)
 // 	{
-// 		printf("%s", (char *)curr_node->content);
+// 		ft_printf("%s", (char *)curr_node->content);
 // 		curr_node = curr_node->next;
 // 	}
 // }
@@ -57,7 +57,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 // 	ft_lstadd_back(&begin, node3);
 // 	ft_print_list_t(begin);
 // 	ft_lstiter(begin, ft_delegate);
-// 	printf("\n");
+// 	ft_printf("\n");
 // 	ft_print_list_t(begin);
 // 	return (0);
 // }
