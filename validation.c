@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validation.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/24 16:10:45 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/07/24 16:51:01 by gdemetra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	is_arg_int(char *arg)
@@ -54,7 +66,6 @@ static void	validate_and_init_arr(int **arr, char **args, int size)
 		*arr = NULL;
 		return ;
 	}
-	// malloc will return null so *arr will become null as it is intended
 	*arr = (int *)malloc(sizeof(int) * size);
 	if (!arr)
 		return ;
@@ -75,8 +86,8 @@ static void	validate_and_init_arr(int **arr, char **args, int size)
 
 int	*validate_input(char **args, int size)
 {
-	int *arr;
-	int distinct;
+	int	*arr;
+	int	distinct;
 
 	validate_and_init_arr(&arr, args, size);
 	if (!arr)

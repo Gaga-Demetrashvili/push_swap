@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/24 16:10:28 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/07/24 17:13:07 by gdemetra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -27,6 +39,9 @@ void		print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 int			*sort_and_indexsize_int_tab(int *arr, int size);
 int			splitted_args_size(char **args);
 void		radix_sort(t_stack *a, t_stack *b);
+size_t		ascending(int a, int b);
+int			indexsize_arr(int *indexed_arr, int *arr, int size);
+int			*arrdup(int *arr, int size);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity, char name);
@@ -34,6 +49,9 @@ void		swap(t_stack *stack);
 void		rotate(t_stack *stack);
 void		rrotate(t_stack *stack);
 void		push(t_stack *a, t_stack *b);
+
+// stack operations utils part
+void		shift_elements(t_stack *stack, size_t dir);
 
 // I think main sorting logic will go here (might rename file and method later)
 void		push_swap(int size, char **argv);

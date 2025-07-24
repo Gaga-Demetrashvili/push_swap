@@ -1,35 +1,31 @@
-NAME = push_swap.a
+NAME = push_swap
 
 LIBFT_DIR = Libft
 PRINTF_DIR = ft_printf
 
-LIBFT_MAKE = $(MAKE) -C $(LIBFT_DIR)
-PRINTF_MAKE = $(MAKE) -C $(PRINTF_DIR)
+LIBFT_MAKE = make bonus -C $(LIBFT_DIR)
+PRINTF_MAKE = make -C $(PRINTF_DIR)
 
 LIBFT_A = $(LIBFT_DIR)/libft.a
 PRINTF_A = $(PRINTF_DIR)/ft_printf.a
 
 SRC = push_swap.c\
 	stack_operations.c\
-	test.c\
 	utils.c\
 	validation.c\
+	stack_operations_utils.c\
+	sort.c\
+	main.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 all: $(LIBFT_A) $(PRINTF_A) $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ar -x $(LIBFT_A)
-	ar -x $(PRINTF_A)
-	ar rc $(NAME) *.o
-	rm -f *.o
-	rm -f $(LIBFT_DIR)/*.o
-	rm -f $(PRINTF_DIR)/*.o
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_A) $(PRINTF_A) -o $(NAME)
 
 $(LIBFT_A):
 	$(LIBFT_MAKE)
@@ -37,19 +33,15 @@ $(LIBFT_A):
 $(PRINTF_A):
 	$(PRINTF_MAKE)
 
-bonus:
-	$(LIBFT_MAKE) bonus
-	$(PRINTF_MAKE) bonus
-
 clean:
 	rm -f $(OBJ)
-	$(LIBFT_MAKE) clean
-	$(PRINTF_MAKE) clean
+	make clean -C $(LIBFT_DIR)
+	make clean -C $(PRINTF_DIR)
 
 fclean: clean
 	rm -f $(NAME)
-	$(LIBFT_MAKE) fclean
-	$(PRINTF_MAKE) fclean
+	make fclean -C $(LIBFT_DIR)
+	make fclean -C $(PRINTF_DIR)
 
 re: fclean all
 

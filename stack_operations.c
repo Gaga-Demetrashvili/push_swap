@@ -1,33 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/24 16:10:34 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/07/24 16:20:15 by gdemetra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// dir (direction) 1 will be up, 0 will be down
-static void	shift_elements(t_stack *stack, size_t dir)
-{
-	int	i;
-
-	if (dir)
-	{
-		i = 1;
-		while (i < stack->size)
-		{
-			stack->arr[i - 1] = stack->arr[i];
-			i++;
-		}
-	}
-	else
-	{
-		if (stack->size == 0)
-			return ;
-		i = stack->size - 1;
-		while (i >= 0)
-		{
-			stack->arr[i + 1] = stack->arr[i];
-			i--;
-		}
-	}
-}
-
-// do not know if I will need to check if stack-a's size < capacity so it was not full;
 void	push(t_stack *a, t_stack *b)
 {
 	int	tmp;
@@ -60,7 +44,7 @@ void	rrotate(t_stack *stack)
 	int	tmp;
 
 	tmp = stack->arr[stack->size - 1];
-	stack->size--; // because in idea I am removing element from bottom
+	stack->size--;
 	shift_elements(stack, 0);
 	stack->size++;
 	stack->arr[0] = tmp;

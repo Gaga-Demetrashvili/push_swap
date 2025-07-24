@@ -1,42 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/24 16:10:22 by gdemetra          #+#    #+#             */
+/*   Updated: 2025/07/24 22:55:47 by gdemetra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	push_swap(int size, char **argv)
+void	free_mem(t_stack *a, t_stack *b)
 {
-	int *arr;
-	int *indexed_arr;
+	free(a->arr);
+	free(b->arr);
+	free(a);
+	free(b);
+}
 
-	arr = validate_input(argv, size);
+int	check_arr(int *arr)
+{
 	if (!arr)
 	{
 		ft_printf("%s\n", "Error");
-		return ;
+		return (1);
 	}
-	// print_int_arr(arr, size);
+	return (0);
+}
+
+void	push_swap(int size, char **argv)
+{
+	int		*arr;
+	int		*indexed_arr;
+	int		*arr_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	arr = validate_input(argv, size);
+	if (check_arr(arr))
+		return ;
 	indexed_arr = sort_and_indexsize_int_tab(arr, size);
-	// ft_printf("%s", "sorted arr - ");
-	// print_int_arr(arr, size); // 1 0 2 4 3 5
 	free(arr);
-	if (!indexed_arr)
+	if (check_arr(indexed_arr))
+		return ;
+	if (1 == size)
 	{
-		ft_printf("%s\n", "Error");
+		free(indexed_arr);
 		return ;
 	}
-	if (1 == size)
-		return ;
-	// ft_printf("%s", "indexed stack - ");
-	// print_int_arr(indexed_arr, size); // 1 0 2 4 3 5
-	int *arr_b = (int *)malloc(sizeof(int) * size);
-
-	// At the begining stack_a is full that's why size and capacity are same
-	t_stack *stack_a = create_stack(indexed_arr, size, size, 'a');
-	// At the begining stack_b should be empty,
-	// capacity will be same as stack_a's
-	t_stack *stack_b = create_stack(arr_b, 0, size, 'b');
-
+	arr_b = (int *)malloc(sizeof(int) * size);
+	stack_a = create_stack(indexed_arr, size, size, 'a');
+	stack_b = create_stack(arr_b, 0, size, 'b');
 	radix_sort(stack_a, stack_b);
-	// ft_printf("%s", "sorted indexed stack - ");
-	// print_int_arr(indexed_arr, size); // 1 0 2 4 3 5
-
-	// tests
-	// stack_operations_tests(stack_a, stack_b);
+	free_mem(stack_a, stack_b);
 }
