@@ -21,6 +21,8 @@ void	push_swap(int size, char **argv)
 		ft_printf("%s\n", "Error");
 		return ;
 	}
+	if (1 == size)
+		return ;
 	// ft_printf("%s", "indexed stack - ");
 	// print_int_arr(indexed_arr, size); // 1 0 2 4 3 5
 	int *arr_b = (int *)malloc(sizeof(int) * size);
