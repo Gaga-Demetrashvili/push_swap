@@ -14,7 +14,6 @@ SRC = push_swap.c\
 	test.c\
 	utils.c\
 	validation.c\
-	main.c
 
 OBJ = $(SRC:.c=.o)
 
