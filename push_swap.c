@@ -30,6 +30,20 @@ int	check_arr(int *arr)
 	return (0);
 }
 
+int		arr_is_sorted(int *arr, int size)
+{
+	int i;
+
+	i = 1;
+	while (i < size)
+	{
+		if (!ascending(arr[i - 1], arr[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	push_swap(int size, char **argv)
 {
 	int		*arr;
@@ -39,7 +53,7 @@ void	push_swap(int size, char **argv)
 	t_stack	*stack_b;
 
 	arr = validate_input(argv, size);
-	if (check_arr(arr))
+	if (check_arr(arr) || arr_is_sorted(arr, size))
 		return ;
 	indexed_arr = sort_and_indexsize_int_tab(arr, size);
 	free(arr);

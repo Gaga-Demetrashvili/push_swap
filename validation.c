@@ -94,6 +94,9 @@ int	*validate_input(char **args, int size)
 		return (NULL);
 	distinct = is_distinct(arr, size);
 	if (!distinct)
+	{
+		free(arr);
 		return (NULL);
+	}
 	return (arr);
 }
