@@ -14,11 +14,11 @@
 
 // #include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	num;
-	int	sign;
-	int	i;
+	long	num;
+	int		sign;
+	int		i;
 
 	num = 0;
 	sign = 1;

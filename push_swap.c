@@ -6,7 +6,7 @@
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:10:22 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/07/24 22:55:47 by gdemetra         ###   ########.fr       */
+/*   Updated: 2025/07/27 15:58:23 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	check_arr(int *arr)
 	return (0);
 }
 
-int		arr_is_sorted(int *arr, int size)
+int	arr_is_sorted(int *arr, int size)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < size)
