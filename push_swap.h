@@ -42,6 +42,8 @@ void		radix_sort(t_stack *a, t_stack *b);
 size_t		ascending(int a, int b);
 int			indexsize_arr(int *indexed_arr, int *arr, int size);
 int			*arrdup(int *arr, int size);
+void		sort_three(t_stack *a);
+void 		sort_five(t_stack *a, t_stack *b);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity, char name);

@@ -48,7 +48,7 @@ void	rrotate(t_stack *stack)
 	shift_elements(stack, 0);
 	stack->size++;
 	stack->arr[0] = tmp;
-	ft_printf("%s\n", "reverse rotate");
+	ft_printf("rr%c\n", stack->name);
 }
 
 void	swap(t_stack *stack)
@@ -60,7 +60,7 @@ void	swap(t_stack *stack)
 	tmp = (stack->arr)[0];
 	(stack->arr)[0] = (stack->arr)[1];
 	(stack->arr)[1] = tmp;
-	ft_printf("%s\n", "swap");
+	ft_printf("s%c\n", stack->name);
 }
 
 t_stack	*create_stack(int *arr, int size, int capacity, char name)

@@ -69,3 +69,65 @@ void	radix_sort(t_stack *a, t_stack *b)
 		i++;
 	}
 }
+
+void sort_three(t_stack *a)
+{
+	int top = a->arr[0];
+	int mid = a->arr[1];
+	int bot = a->arr[2];
+
+	if (top > mid && mid < bot && top < bot)
+		a->swap(a);
+	else if (top > mid && mid > bot)
+	{
+		a->swap(a);
+		a->rrotate(a);
+	}
+	else if (top > mid && mid < bot && top > bot)
+		a->rotate(a);
+	else if (top < mid && mid > bot && top < bot)
+	{
+		a->swap(a);
+		a->rotate(a);
+	}
+	else if (top < mid && mid > bot && top > bot)
+		a->rrotate(a);
+}
+
+static int index_of_smallest(t_stack *stack)
+{
+	int min = stack->arr[0];
+	int index = 0;
+	int i = 1;
+
+	while (i < stack->size)
+	{
+		if (stack->arr[i] < min)
+		{
+			min = stack->arr[i];
+			index = i;
+		}
+		i++;
+	}
+	return index;
+}
+
+void sort_five(t_stack *a, t_stack *b)
+{
+	while (a->size > 3)
+	{
+		int min_index = index_of_smallest(a);
+		while (min_index != 0)
+		{
+			if (min_index <= a->size / 2)
+				a->rotate(a);
+			else
+				a->rrotate(a);
+			min_index = index_of_smallest(a);
+		}
+		push(a, b);
+	}
+	sort_three(a);
+	while (b->size > 0)
+		push(b, a);
+}

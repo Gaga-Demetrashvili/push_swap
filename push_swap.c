@@ -44,6 +44,16 @@ int	arr_is_sorted(int *arr, int size)
 	return (1);
 }
 
+void sort_mediator(int size, t_stack *a, t_stack *b)
+{
+	if (size == 3)
+		sort_three(a);
+	else if (size == 5)
+		sort_five(a, b);
+	else
+		radix_sort(a, b);	
+}
+
 void	push_swap(int size, char **argv)
 {
 	int		*arr;
@@ -67,6 +77,6 @@ void	push_swap(int size, char **argv)
 	arr_b = (int *)malloc(sizeof(int) * size);
 	stack_a = create_stack(indexed_arr, size, size, 'a');
 	stack_b = create_stack(arr_b, 0, size, 'b');
-	radix_sort(stack_a, stack_b);
+	sort_mediator(size, stack_a, stack_b);
 	free_mem(stack_a, stack_b);
 }
