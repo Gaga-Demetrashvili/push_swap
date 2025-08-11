@@ -6,7 +6,7 @@
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:23:38 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/07/24 22:54:43 by gdemetra         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:58:20 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,15 @@ void	radix_sort(t_stack *a, t_stack *b)
 	}
 }
 
-void sort_three(t_stack *a)
+void	sort_three(t_stack *a)
 {
-	int top = a->arr[0];
-	int mid = a->arr[1];
-	int bot = a->arr[2];
+	int	top;
+	int	mid;
+	int	bot;
 
+	top = a->arr[0];
+	mid = a->arr[1];
+	bot = a->arr[2];
 	if (top > mid && mid < bot && top < bot)
 		a->swap(a);
 	else if (top > mid && mid > bot)
@@ -94,12 +97,15 @@ void sort_three(t_stack *a)
 		a->rrotate(a);
 }
 
-static int index_of_smallest(t_stack *stack)
+static int	index_of_smallest(t_stack *stack)
 {
-	int min = stack->arr[0];
-	int index = 0;
-	int i = 1;
+	int	min;
+	int	index;
+	int	i;
 
+	min = stack->arr[0];
+	index = 0;
+	i = 1;
 	while (i < stack->size)
 	{
 		if (stack->arr[i] < min)
@@ -109,14 +115,16 @@ static int index_of_smallest(t_stack *stack)
 		}
 		i++;
 	}
-	return index;
+	return (index);
 }
 
-void sort_five(t_stack *a, t_stack *b)
+void	sort_five(t_stack *a, t_stack *b)
 {
+	int	min_index;
+
 	while (a->size > 3)
 	{
-		int min_index = index_of_smallest(a);
+		min_index = index_of_smallest(a);
 		while (min_index != 0)
 		{
 			if (min_index <= a->size / 2)

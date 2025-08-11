@@ -6,7 +6,7 @@
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:10:28 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/07/24 17:13:07 by gdemetra         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:57:06 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t		ascending(int a, int b);
 int			indexsize_arr(int *indexed_arr, int *arr, int size);
 int			*arrdup(int *arr, int size);
 void		sort_three(t_stack *a);
-void 		sort_five(t_stack *a, t_stack *b);
+void		sort_five(t_stack *a, t_stack *b);
 
 // stack operations part
 t_stack		*create_stack(int *arr, int size, int capacity, char name);

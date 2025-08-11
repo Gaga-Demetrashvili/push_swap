@@ -6,7 +6,7 @@
 /*   By: gdemetra <gdemetra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:10:22 by gdemetra          #+#    #+#             */
-/*   Updated: 2025/07/27 15:58:23 by gdemetra         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:56:50 by gdemetra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ int	arr_is_sorted(int *arr, int size)
 	return (1);
 }
 
-void sort_mediator(int size, t_stack *a, t_stack *b)
+void	sort_mediator(int size, t_stack *a, t_stack *b)
 {
 	if (size == 3)
 		sort_three(a);
 	else if (size == 5)
 		sort_five(a, b);
 	else
-		radix_sort(a, b);	
+		radix_sort(a, b);
 }
 
 void	push_swap(int size, char **argv)
